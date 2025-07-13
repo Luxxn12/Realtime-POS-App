@@ -49,7 +49,7 @@
 ![screenshot](/public/img/1.png)
 ![screenshot](/public/img/7.png)
 ![screenshot](/public/img/2.png)
+![screenshot](/public/img/6.png)
 ![screenshot](/public/img/3.png)
 ![screenshot](/public/img/4.png)
 ![screenshot](/public/img/5.png)
-![screenshot](/public/img/6.png)
