@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Very light blue-gray */
+    --foreground: 220 20% 15%; /* Dark blue-gray */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+    --primary: 220 80% 40%; /* Muted deep blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 90%; /* Lighter blue-gray */
+    --secondary-foreground: 220 20% 15%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 210 10% 40%;
+    --accent: 210 20% 90%;
+    --accent-foreground: 220 20% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 10% 80%;
+    --input: 210 10% 80%;
+    --ring: 220 80% 40%;
+    --radius: 0.75rem; /* Slightly larger radius for softer corners */
+  }
+
+  .dark {
+    --background: 220 20% 10%; /* Darker blue-gray */
+    --foreground: 210 20% 90%;
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 90%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 20% 90%;
+    --primary: 220 80% 60%; /* Lighter primary for dark mode */
+    --primary-foreground: 220 20% 15%;
+    --secondary: 220 20% 20%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 220 20% 20%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 220 20% 20%;
+    --accent-foreground: 210 20% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 220 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
