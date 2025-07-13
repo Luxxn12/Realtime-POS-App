@@ -1,17 +1,17 @@
 "use client"
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Search, Eye, Receipt, Calendar, DollarSign } from "lucide-react"
-import { useQuery } from "@tanstack/react-query"
-import { getOrders } from "@/lib/api/orders"
 import { OrderDetailDialog } from "@/components/orders/order-detail-dialog"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { getOrders } from "@/lib/api/orders"
 import { useRealtimeOrders } from "@/lib/hooks/use-realtime"
+import { useQuery } from "@tanstack/react-query"
 import { format } from "date-fns"
+import { Calendar, DollarSign, Eye, Receipt, Search } from "lucide-react"
+import { useState } from "react"
 
 /* -------------------------------------------------
    helpers
@@ -65,7 +65,7 @@ export default function OrdersPage() {
       order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
       order.payment_method.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (order.customers?.name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (order.user_profiles?.full_name || "").toLowerCase().includes(searchTerm.toLowerCase()), // Filter by admin name
+      (order.user_profiles?.full_name || "").toLowerCase().includes(searchTerm.toLowerCase()),
   )
 
   const handleViewOrder = (order) => {
@@ -184,9 +184,9 @@ export default function OrdersPage() {
                       <TableHead key="total" className="text-foreground">
                         Total
                       </TableHead>,
-                      <TableHead key="admin" className="text-foreground">
-                        Processed&nbsp;By
-                      </TableHead>,
+                      // <TableHead key="admin" className="text-foreground">
+                      //   Processed&nbsp;By
+                      // </TableHead>,
                       <TableHead key="stat" className="text-foreground">
                         Status
                       </TableHead>,
@@ -245,9 +245,9 @@ export default function OrdersPage() {
                           <p className="text-xs text-muted-foreground">Tax: ${order.tax_amount.toFixed(2)}</p>
                         </TableCell>,
 
-                        <TableCell key="admin" className="text-foreground">
-                          {order.user_profiles?.full_name ?? "N/A"}
-                        </TableCell>,
+                        // <TableCell key="admin" className="text-foreground">
+                        //   {order.user_profiles?.full_name ?? "N/A"}
+                        // </TableCell>,
 
                         <TableCell key="stat">
                           <Badge variant={getStatusColor(order.payment_status)} className="capitalize">
