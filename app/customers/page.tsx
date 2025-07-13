@@ -1,16 +1,16 @@
 "use client"
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Search, Plus, Edit, Eye, Users } from "lucide-react"
-import { useQuery } from "@tanstack/react-query"
-import { getCustomers } from "@/lib/api/customers"
 import { CustomerDialog } from "@/components/customers/customer-dialog"
-import { useRealtimeCustomers } from "@/lib/hooks/use-realtime"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { getCustomers } from "@/lib/api/customers"
+import { useQuery } from "@tanstack/react-query"
+import { Edit, Eye, Plus, Search, Users } from "lucide-react"
+import { useState } from "react"
+// import { useRealtimeCustomers } from "@/lib/hooks/use-realtime"
 
 export default function CustomersPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -27,7 +27,7 @@ export default function CustomersPage() {
   })
 
   // Enable real-time updates
-  useRealtimeCustomers()
+  // useRealtimeCustomers()
 
   const filteredCustomers = customers.filter(
     (customer) =>
@@ -41,7 +41,7 @@ export default function CustomersPage() {
     setCustomerDialogOpen(true)
   }
 
-  const handleEditCustomer = (customer) => {
+  const handleEditCustomer = (customer: any) => {
     setSelectedCustomer(customer)
     setCustomerDialogOpen(true)
   }
